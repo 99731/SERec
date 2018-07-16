@@ -1,15 +1,20 @@
 ## SERec
 Code for AAAI2018 paper "Collaborative Filtering with Social Exposure: A Modular Approach to Social Recommendation"
 
+Contact: Menghan Wang (wangmengh@zju.edu.cn)
+
 ## Requirements
 
 ## How to use
 Note that the SERec is new name of our model, in the code it is named "s_expo".
 
 the meaning of the parameter "version":
+
 1 means exposures are computed purely based on popularity, which is equivalent to **"ExpoMF"** (Our c++ version is much faster).
+
 2 means **"social boosting"**
-3 means **"social regularization" **
+
+3 means **"social regularization"**
 
 
 ## Citation
