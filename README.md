@@ -9,7 +9,7 @@ Contact: Menghan Wang (wangmengh@zju.edu.cn)
 
 - gsl 2.2
 
-- openMP
+- openMP (If you don't want to use it, you can delete all the lines look like "#pragma omp parallel for..." in the **"socialexpo.cpp"**)
 
 - (optional) openBLAS
 
@@ -17,11 +17,11 @@ Contact: Menghan Wang (wangmengh@zju.edu.cn)
 
 A data sample is provided. (the line numbers of files below are used as the index to users or items, starting from 0.)
 
-- user file: totalrateditems ItemId1:count ItemId2:count ...
+- user file: total_rated_items [space] Item1:count [space] Item2:count ...
 
-- item file: totalratedusers User1:count UserId2:count ...
+- item file: total_rated_users [space] User1:count [space] User2:count ...
 
-- social file: friendsnum friendID1:1 friendID2:1 ...
+- social file: friend_sum [space] Friend1:1 [space] Friend2:1 ...
 
 
 
@@ -32,14 +32,16 @@ Note that the SERec is new name of our model, in the code it is named "s_expo".
 
 - Tune the parameters in run.sh. As there are too many paramters, you may need to tune some parameters in the main.cpp.
 
+- compile the code and run with "run.sh".
+
 - The meaning of the parameter "version":
+```
+  Verison 1 means exposures are computed purely based on popularity, which is equivalent to "ExpoMF" (Our c++ version is much faster).
 
-1 means exposures are computed purely based on popularity, which is equivalent to **"ExpoMF"** (Our c++ version is much faster).
+  Verison 2 means "social boosting"
 
-2 means **"social boosting"**
-
-3 means **"social regularization"**
-
+  Verison 3 means "social regularization"
+```
 
 ## Citation
 Please cite our paper if it is helpful to your research:
