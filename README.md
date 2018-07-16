@@ -5,10 +5,34 @@ Contact: Menghan Wang (wangmengh@zju.edu.cn)
 
 ## Requirements
 
+- gcc 5.4.0
+
+- gsl 2.2
+
+- openMP
+
+- (optional) openBLAS
+
+## Data format
+
+A data sample is provided. (the line numbers of files below are used as the index to users or items, starting from 0.)
+
+- user file: totalrateditems ItemId1:count ItemId2:count ...
+
+- item file: totalratedusers User1:count UserId2:count ...
+
+- social file: friendsnum friendID1:1 friendID2:1 ...
+
+
+
 ## How to use
 Note that the SERec is new name of our model, in the code it is named "s_expo".
 
-the meaning of the parameter "version":
+- Revise the lib path in Makefile to meet your settings. 
+
+- Tune the parameters in run.sh. As there are too many paramters, you may need to tune some parameters in the main.cpp.
+
+- The meaning of the parameter "version":
 
 1 means exposures are computed purely based on popularity, which is equivalent to **"ExpoMF"** (Our c++ version is much faster).
 
